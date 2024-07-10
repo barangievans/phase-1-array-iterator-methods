@@ -1,6 +1,11 @@
 function generateGrade() {
     try {
         let marks = parseFloat(prompt("Enter the student's marks (0-100):"));
+        if (marks === null) {
+            console.log("Operation cancelled. Marks input aborted.");
+            return;
+        }
+
         if (isNaN(marks) || marks < 0 || marks > 100) {
             console.log("Invalid input. Marks should be between 0 and 100.");
             return;
@@ -19,9 +24,9 @@ function generateGrade() {
             grade = 'E';
         }
 
-      //  console.log(`Grade: ${grade}`);
+        console.log(`Grade: ${grade}`);
 
     } catch (error) {
-        console.log(error.message); // Output the error message
-    
+        console.log(error.message); // Output the error message if any unexpected error occurs
+    }
 }
