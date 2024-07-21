@@ -1,154 +1,44 @@
-# Array Iterator Methods
+# Week 1 Toy problems Prerequisites
 
-## Learning Goals
+## Prerequisites
 
-- Understand how JavaScript's iterator methods help us
+1. Create a repository on your GitHub account.
+   
+   NB: One folder, with 3-4 files for each solution. Please note that a single file should only hold one solution.
 
-## Introduction
+2. Use JavaScript to wire down the solution.
 
-We've learned about `Array` methods that allow us to modify arrays by adding and
-removing elements (`push()`, `slice()`, etc). These methods operate on the array
-as a whole, but JavaScript also includes methods that assist us in iterating
-through an array and interacting with each individual element in some way. We
-will be learning about these methods in the next few lessons.
+3. Push the solution to the above repository once done.
 
-## Why Use JavaScript's Iterator Methods?
+4. Submit the repository link for grading.
 
-Imagine that we have a collection of Flatbook user objects in an array:
+5. Ensure your repository has a well-written README.
 
-```js
-const users = [
-  {
-    firstName: "Niky",
-    lastName: "Morgan",
-    favoriteColor: "Blue",
-    favoriteAnimal: "Jaguar",
-    personalQuote: "You're never too old to learn something new",
-  },
-  {
-    firstName: "Tracy",
-    lastName: "Lum",
-    favoriteColor: "Yellow",
-    favoriteAnimal: "Penguin",
-    personalQuote: "I just got lost in thought - it was unfamiliar territory",
-  },
-  {
-    firstName: "Josh",
-    lastName: "Rowley",
-    favoriteColor: "Blue",
-    favoriteAnimal: "Penguin",
-    personalQuote: "Always remember you’re unique, just like everyone else",
-  },
-  {
-    firstName: "Kate",
-    lastName: "Travers",
-    favoriteColor: "Red",
-    favoriteAnimal: "Jaguar",
-    personalQuote: "Behind every great man is a woman rolling her eyes",
-  },
-  {
-    firstName: "Avidor",
-    lastName: "Turkewitz",
-    favoriteColor: "Blue",
-    favoriteAnimal: "Penguin",
-    personalQuote:
-      "You don’t have to see the whole staircase, just take the first step",
-  },
-  {
-    firstName: "Drew",
-    lastName: "Price",
-    favoriteColor: "Yellow",
-    favoriteAnimal: "Elephant",
-    personalQuote:
-      "Failure is not the opposite of success: it’s part of success",
-  },
-];
-```
+## Challenges
 
-We can iterate over that collection and print out everyone's first name as
-follows:
+### Challenge 1: Student Grade Generator (Toy Problem)
 
-```js
-function firstNamePrinter(collection) {
-  for (const user of collection) {
-    console.log(user.firstName);
-  }
-}
+Write a function that prompts the user to input student marks. The input should be between 0 and 100. The output should correspond to the correct grade, as shown below:
 
-firstNamePrinter(users);
-// LOG: Niky
-// LOG: Tracy
-// LOG: Josh
-// LOG: Kate
-// LOG: Avidor
-// LOG: Drew
-```
+- A > 79
+- B - 60 to 79
+- C - 59 to 49
+- D - 40 to 49
+- E - less than 40.
 
-It's also not too difficult to print out only users whose favorite color is
-blue:
+### Challenge 2: Speed Detector (Toy Problem)
 
-```js
-function blueFilter(collection) {
-  for (const user of collection) {
-    if (user.favoriteColor === "Blue") {
-      console.log(user.firstName);
-    }
-  }
-}
+Write a program that takes the speed of a car as input, e.g., 80. If the speed is less than 70, it should print “Ok”. Otherwise, for every 5 km/h above the speed limit (70), it should give the driver one demerit point and print the total number of demerit points.
 
-blueFilter(users);
-// LOG: Niky
-// LOG: Josh
-// LOG: Avidor
-```
+- For example, if the speed is 80, it should print: “Points: 2”. If the driver gets more than 12 points, the function should print: “License suspended”.
 
-But what if we wanted to print out users whose favorite color is red instead?
-With the above approach, we'd need to create a whole new `redFilter` function.
+### Challenge 3: Net Salary Calculator (Toy Problem)
 
-We can improve matters by abstracting out the color into a variable:
+Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. Calculate the payee (i.e., Tax), NHIF Deductions, NSSF Deductions, gross salary, and net salary.
 
-```js
-function colorFilter(collection, color) {
-  for (const user of collection) {
-    if (user.favoriteColor === color) {
-      console.log(user.firstName);
-    }
-  }
-}
+- Use KRA, NHIF, and NSSF values provided in the [KRA Tax Rates](https://www.aren.co.ke/payroll/taxrates.htm) and [KRA website](https://www.kra.go.ke/en/individual/calculate-tax/calculating-tax/paye) as references.
 
-colorFilter(users, "Red");
-// LOG: Kate
-```
+## Hosted Solution
 
-This is definitely better: now we can print a list of users with any favorite
-color, but what if we want to print out users with a particular favorite animal
-instead? Or what if we want to do something other than simply print a list to
-the screen? For example, we might want to access each user's personal quote and
-add an exclamation point to the end. Or, using a different example, we might
-want to calculate the average amount of money spent by our customers in a given
-month.
+- [Week 1 Toy Problems GitHub Repository](https://github.com/barangievans/phase-1-array-iterator-methods)
 
-There are any number of ways we might want to interact with the elements in our
-array, but all of them have some things in common: in all cases, we 1) pass in
-an array, 2) iterate through it using some sort of loop, and 3) write some code
-to interact with each element in the desired way.
-
-Accessing and interacting with the elements in an array is, in fact, a very
-common need in programming. So common that JavaScript has created a number of
-built in methods that reduce our need to write the common parts of the process
-over and over again. Below is a summary of some common use cases and the
-JavaScript method(s) we can use for each:
-
-| Use Case                                                       | Method                |
-| -------------------------------------------------------------- | --------------------- |
-| Finding a single element that meets a condition                | `indexOf()`, `find()` |
-| Finding and returning a list of elements that meet a condition | `filter()`            |
-| Modifying each element and returning the modified array        | `map()`               |
-| Creating a summary or aggregation of values in an array        | `reduce()`            |
-
-We will learn about each of the above methods in the upcoming lessons.
-
-## Resources
-
-- MDN
-  - [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
