@@ -34,7 +34,7 @@ Write a program that takes the speed of a car as input, e.g., 80. If the speed i
 
 ### Challenge 3: Net Salary Calculator (Toy Problem)
 
-Write a program whose major task is to calculate an individual’s Net Salary by getting the inputs of basic salary and benefits. Calculate the payee (i.e., Tax), NHIF Deductions, NSSF Deductions, gross salary, and net salary.
+Write a program whose major task is calculating an individual’s Net Salary by getting basic salary and benefits inputs. Calculate the payee (i.e., Tax), NHIF Deductions, NSSF Deductions, gross salary, and net salary.
 
 - Use KRA, NHIF, and NSSF values provided in the [KRA Tax Rates](https://www.aren.co.ke/payroll/taxrates.htm) and [KRA website](https://www.kra.go.ke/en/individual/calculate-tax/calculating-tax/paye) as references.
 
