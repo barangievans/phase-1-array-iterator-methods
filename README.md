@@ -40,5 +40,5 @@ Write a program whose major task is calculating an individual’s Net Salary by 
 
 ## Hosted Solution
 
-- [Week 1 Toy Problems GitHub Repository]()
+- [Week 1 Toy Problems GitHub Repository](https://barangievans.github.io/phase-1-array-iterator-methods/)
 
